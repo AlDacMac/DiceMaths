@@ -1,5 +1,4 @@
-from diceMaths.coreMaths import *
-
+from core import probNone
 
 # Returns the average hits and crits for p1 in a contested roll as a tuple
 def ContestedRollHitAvg(p1burst, p1target, p2burst, p2target):
