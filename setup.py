@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dicemaths",
-    version="0.2.0",
+    version="0.3.0",
     author="AlDacMac",
     author_email="alasdairmacgdev@gmail.com",
     description="Package for performing basic statistical calculations on the outcomes of dice rolls",

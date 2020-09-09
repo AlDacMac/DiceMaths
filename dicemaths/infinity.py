@@ -24,6 +24,14 @@ def contested_roll_hit_avg(attacker_burst, attacker_target, target_burst, target
             #print(prob_hit_from_roll)
     return (attacker_burst * single_dice_hit_prob, attacker_burst * single_dice_crit_prob)
 
+def uncontested_hit_avg(attacker_burst, attacker_target):
+    attacker_bonus = max(0, attacker_target - 20)
+    attacker_target = min(20, attacker_target)
+    # Subtract 1 to stop it counting crits as hits, set lower floor of 0 in case we can only crit, 
+    #   we don't want hit prob in the negatives
+    single_dice_hit_prob = max(0, (attacker_target - 1 - attacker_bonus) / 20)
+    single_dice_crit_prob = (1 + attacker_bonus) / 20
+    return (attacker_burst * single_dice_hit_prob, attacker_burst * single_dice_crit_prob)
 
 def contested_roll_crit_avg(attacker_burst, attacker_target, attacker_bonus, target_burst, target_target, target_bonus):
     singleDiceProb = 0.0
